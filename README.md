@@ -10,14 +10,6 @@ Implémenter différentes approches d’injection de dépendances :
 - ✅ Injection dynamique via `Class.forName(...)`
 - ✅ Injection via **Spring XML**
 - ✅ Injection via **Spring annotations**
-
----
-
-## 🛠 Structure du projet
-
-src/ ├── net.imad.dao # Interface DAO et son implémentation │ ├── IDao.java │ └── DaoImpl.java ├── net.imad.ext # Deuxième implémentation du DAO │ └── DaoImplV2.java ├── net.imad.metier # Interface métier et son implémentation │ ├── IMetier.java │ └── MetierImpl.java ├── net.imad.pres # Présentations (mains) │ ├── Pres1.java # Injection manuelle │ ├── Pres2.java # Injection dynamique via fichier config.txt │ ├── PresSpringXML.java # Injection avec Spring XML │ └── PresSpringAnnotation.java # Injection avec Spring annotations └── resources/ └── config.xml # Fichier de configuration Spring XML
-
-
 ---
 
 ## ▶️ Exécution des différents modes

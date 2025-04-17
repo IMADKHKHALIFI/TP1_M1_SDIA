@@ -28,31 +28,37 @@ src/ ├── net.imad.dao # Interface DAO et son implémentation │ ├──
 DaoImplV2 d = new DaoImplV2();
 MetierImpl metier = new MetierImpl(d);
 System.out.println("RES = " + metier.calcul());
+```
 
-2. 🧠 Injection dynamique avec Class.forName (Pres2.java)
+## 2. 🧠 Injection dynamique avec Class.forName (Pres2.java)
 Lire les noms de classes DAO et METIER depuis un fichier config.txt
 
+```java
 Instancier dynamiquement avec Class.forName(...)
-
-txt
-Copy
-Edit
 net.imad.ext.DaoImplV2
 net.imad.metier.MetierImpl
-3. 🌿 Injection via Spring (XML) – PresSpringXML.java
-Utilise ClassPathXmlApplicationContext
+```
 
+
+### 3. 🌿 Injection via Spring (XML) – PresSpringXML.java
+Utilise ClassPathXmlApplicationContext
 Configuration des beans dans config.xml
+```java
 <bean id="d" class="net.imad.ext.DaoImplV2"/>
 <bean id="metier" class="net.imad.metier.MetierImpl">
     <constructor-arg ref="d"/>
 </bean>
-4. 🌱 Injection via Spring (Annotations) – PresSpringAnnotation.java
+```
+### 4. 🌱 Injection via Spring (Annotations) – PresSpringAnnotation.java
 Utilise @Repository, @Component, @Autowired, @Qualifier
-
 ApplicationContext basé sur l’annotation :
+```java
 ApplicationContext applicationContext = 
     new AnnotationConfigApplicationContext("net.imad");
+```
+
+
+
 👨‍💻 Auteur
 IMAD KHALIFI
 GitHub
